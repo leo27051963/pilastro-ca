@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIlZlcmlmaWNhIFBpbGFzdHJvIEMuQS4g4oCUIFIuRC4gMjIyOS8xOTM5IiwKICAic2hvcnRfbmFtZSI6ICJQaWxhc3RybyBDQSIsCiAgImRlc2NyaXB0aW9uIjogIlZlcmlmaWNhIHBpbGFzdHJvIGluIGNlbWVudG8gYXJtYXRvIHNlY29uZG8gUi5ELiAyMjI5LzE5MzkiLAogICJzdGFydF91cmwiOiAiLiIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzFhMTYxMCIsCiAgInRoZW1lX2NvbG9yIjogIiMxYTE2MTAiLAogICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsCiAgImljb25zIjogWwogICAgeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhkcFpIUm9QU0kxTVRJaUlHaGxhV2RvZEQwaU5URXlJaUIyYVdWM1FtOTRQU0l3SURBZ05URXlJRFV4TWlJK0NpQWdQSEpsWTNRZ2QybGtkR2c5SWpVeE1pSWdhR1ZwWjJoMFBTSTFNVElpSUdacGJHdzlJaU14WVRFMk1UQWlMejRLSUNBOGNtVmpkQ0I0UFNJeU1DSWdlVDBpTWpBaUlIZHBaSFJvUFNJME56SWlJR2hsYVdkb2REMGlORGN5SWlCbWFXeHNQU0p1YjI1bElpQnpkSEp2YTJVOUlpTmpPR0k0T1dFaUlITjBjbTlyWlMxM2FXUjBhRDBpT0NJdlBnb2dJRHh5WldOMElIZzlJak0ySWlCNVBTSXpOaUlnZDJsa2RHZzlJalEwTUNJZ2FHVnBaMmgwUFNJME5EQWlJR1pwYkd3OUltNXZibVVpSUhOMGNtOXJaVDBpSTJNNFlqZzVZU0lnYzNSeWIydGxMWGRwWkhSb1BTSXlJaTgrQ2lBZ1BDRXRMU0JUWlhwcGIyNWxJSEJwYkdGemRISnZJSE4wYVd4cGVucGhkR0VnTFMwK0NpQWdQSEpsWTNRZ2VEMGlNVFUySWlCNVBTSTRNQ0lnZDJsa2RHZzlJakl3TUNJZ2FHVnBaMmgwUFNJeU1EQWlJR1pwYkd3OUlpTmtaR1E0WXpnaUlITjBjbTlyWlQwaUkyTTRZamc1WVNJZ2MzUnliMnRsTFhkcFpIUm9QU0kySWk4K0NpQWdQSEpsWTNRZ2VEMGlNVGMySWlCNVBTSXhNREFpSUhkcFpIUm9QU0l4TmpBaUlHaGxhV2RvZEQwaU1UWXdJaUJtYVd4c1BTSnViMjVsSWlCemRISnZhMlU5SWlOaE1Ea3dOekFpSUhOMGNtOXJaUzEzYVdSMGFEMGlNaUlnYzNSeWIydGxMV1JoYzJoaGNuSmhlVDBpT0N3MUlpOCtDaUFnUENFdExTQmlZWEp5WlNCaGJtZHZiRzhnTFMwK0NpQWdQR05wY21Oc1pTQmplRDBpTVRnNElpQmplVDBpTVRFeUlpQnlQU0l4TkNJZ1ptbHNiRDBpSXpGaE0yRTJZaUlnYzNSeWIydGxQU0lqWXpoaU9EbGhJaUJ6ZEhKdmEyVXRkMmxrZEdnOUlqTWlMejRLSUNBOFkybHlZMnhsSUdONFBTSXpNalFpSUdONVBTSXhNVElpSUhJOUlqRTBJaUJtYVd4c1BTSWpNV0V6WVRaaUlpQnpkSEp2YTJVOUlpTmpPR0k0T1dFaUlITjBjbTlyWlMxM2FXUjBhRDBpTXlJdlBnb2dJRHhqYVhKamJHVWdZM2c5SWpFNE9DSWdZM2s5SWpJME9DSWdjajBpTVRRaUlHWnBiR3c5SWlNeFlUTmhObUlpSUhOMGNtOXJaVDBpSTJNNFlqZzVZU0lnYzNSeWIydGxMWGRwWkhSb1BTSXpJaTgrQ2lBZ1BHTnBjbU5zWlNCamVEMGlNekkwSWlCamVUMGlNalE0SWlCeVBTSXhOQ0lnWm1sc2JEMGlJekZoTTJFMllpSWdjM1J5YjJ0bFBTSWpZemhpT0RsaElpQnpkSEp2YTJVdGQybGtkR2c5SWpNaUx6NEtJQ0E4SVMwdElHWnlaV05qYVdFZ1RpQXRMVDRLSUNBOGJHbHVaU0I0TVQwaU1qVTJJaUI1TVQwaU16QWlJSGd5UFNJeU5UWWlJSGt5UFNJM05TSWdjM1J5YjJ0bFBTSWpPR0l4WVRGaElpQnpkSEp2YTJVdGQybGtkR2c5SWpnaUx6NEtJQ0E4Y0c5c2VXZHZiaUJ3YjJsdWRITTlJakkxTml3NE1DQXlNellzTlRJZ01qYzJMRFV5SWlCbWFXeHNQU0lqT0dJeFlURmhJaTgrQ2lBZ1BDRXRMU0IwWlhOMGJ5QXRMVDRLSUNBOGRHVjRkQ0I0UFNJeU5UWWlJSGs5SWpNME1DSWdkR1Y0ZEMxaGJtTm9iM0k5SW0xcFpHUnNaU0lnWm05dWRDMW1ZVzFwYkhrOUlrZGxiM0puYVdFc2MyVnlhV1lpSUdadmJuUXRjMmw2WlQwaU5USWlJR1p2Ym5RdGQyVnBaMmgwUFNKaWIyeGtJaUJtYVd4c1BTSWpaalZtTUdVNElqNVNMa1F1SURJeU1qazhMM1JsZUhRK0NpQWdQSFJsZUhRZ2VEMGlNalUySWlCNVBTSXpPVFVpSUhSbGVIUXRZVzVqYUc5eVBTSnRhV1JrYkdVaUlHWnZiblF0Wm1GdGFXeDVQU0pIWlc5eVoybGhMSE5sY21sbUlpQm1iMjUwTFhOcGVtVTlJak13SWlCbWFXeHNQU0lqWXpoaU9EbGhJajR4T1RNNVBDOTBaWGgwUGdvZ0lEeDBaWGgwSUhnOUlqSTFOaUlnZVQwaU5EVXdJaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCbWIyNTBMV1poYldsc2VUMGlKME52ZFhKcFpYSWdUbVYzSnl4dGIyNXZjM0JoWTJVaUlHWnZiblF0YzJsNlpUMGlNalFpSUdacGJHdzlJaU0yWWpZd05UQWlJR3hsZEhSbGNpMXpjR0ZqYVc1blBTSTJJajVRU1V4QlUxUlNUeUJETGtFdVBDOTBaWGgwUGdvOEwzTjJaejQ9IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn0KICBdCn0=">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pilastro CA">
+<meta name="theme-color" content="#1a1610">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGZpbGw9IiMxYTE2MTAiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGI4OWEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDxyZWN0IHg9IjM2IiB5PSIzNiIgd2lkdGg9IjQ0MCIgaGVpZ2h0PSI0NDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M4Yjg5YSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPCEtLSBTZXppb25lIHBpbGFzdHJvIHN0aWxpenphdGEgLS0+CiAgPHJlY3QgeD0iMTU2IiB5PSI4MCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNkZGQ4YzgiIHN0cm9rZT0iI2M4Yjg5YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CiAgPHJlY3QgeD0iMTc2IiB5PSIxMDAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSJub25lIiBzdHJva2U9IiNhMDkwNzAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iOCw1Ii8+CiAgPCEtLSBiYXJyZSBhbmdvbG8gLS0+CiAgPGNpcmNsZSBjeD0iMTg4IiBjeT0iMTEyIiByPSIxNCIgZmlsbD0iIzFhM2E2YiIgc3Ryb2tlPSIjYzhiODlhIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8Y2lyY2xlIGN4PSIzMjQiIGN5PSIxMTIiIHI9IjE0IiBmaWxsPSIjMWEzYTZiIiBzdHJva2U9IiNjOGI4OWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxjaXJjbGUgY3g9IjE4OCIgY3k9IjI0OCIgcj0iMTQiIGZpbGw9IiMxYTNhNmIiIHN0cm9rZT0iI2M4Yjg5YSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPGNpcmNsZSBjeD0iMzI0IiBjeT0iMjQ4IiByPSIxNCIgZmlsbD0iIzFhM2E2YiIgc3Ryb2tlPSIjYzhiODlhIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8IS0tIGZyZWNjaWEgTiAtLT4KICA8bGluZSB4MT0iMjU2IiB5MT0iMzAiIHgyPSIyNTYiIHkyPSI3NSIgc3Ryb2tlPSIjOGIxYTFhIiBzdHJva2Utd2lkdGg9IjgiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1Niw4MCAyMzYsNTIgMjc2LDUyIiBmaWxsPSIjOGIxYTFhIi8+CiAgPCEtLSB0ZXN0byAtLT4KICA8dGV4dCB4PSIyNTYiIHk9IjM0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZjVmMGU4Ij5SLkQuIDIyMjk8L3RleHQ+CiAgPHRleHQgeD0iMjU2IiB5PSIzOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjMwIiBmaWxsPSIjYzhiODlhIj4xOTM5PC90ZXh0PgogIDx0ZXh0IHg9IjI1NiIgeT0iNDUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0NvdXJpZXIgTmV3Jyxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjYwNTAiIGxldHRlci1zcGFjaW5nPSI2Ij5QSUxBU1RSTyBDLkEuPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGZpbGw9IiMxYTE2MTAiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGI4OWEiIHN0cm9rZS13aWR0aD0iOCIvPgogIDxyZWN0IHg9IjM2IiB5PSIzNiIgd2lkdGg9IjQ0MCIgaGVpZ2h0PSI0NDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2M4Yjg5YSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPCEtLSBTZXppb25lIHBpbGFzdHJvIHN0aWxpenphdGEgLS0+CiAgPHJlY3QgeD0iMTU2IiB5PSI4MCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNkZGQ4YzgiIHN0cm9rZT0iI2M4Yjg5YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CiAgPHJlY3QgeD0iMTc2IiB5PSIxMDAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiBmaWxsPSJub25lIiBzdHJva2U9IiNhMDkwNzAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iOCw1Ii8+CiAgPCEtLSBiYXJyZSBhbmdvbG8gLS0+CiAgPGNpcmNsZSBjeD0iMTg4IiBjeT0iMTEyIiByPSIxNCIgZmlsbD0iIzFhM2E2YiIgc3Ryb2tlPSIjYzhiODlhIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8Y2lyY2xlIGN4PSIzMjQiIGN5PSIxMTIiIHI9IjE0IiBmaWxsPSIjMWEzYTZiIiBzdHJva2U9IiNjOGI4OWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxjaXJjbGUgY3g9IjE4OCIgY3k9IjI0OCIgcj0iMTQiIGZpbGw9IiMxYTNhNmIiIHN0cm9rZT0iI2M4Yjg5YSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPGNpcmNsZSBjeD0iMzI0IiBjeT0iMjQ4IiByPSIxNCIgZmlsbD0iIzFhM2E2YiIgc3Ryb2tlPSIjYzhiODlhIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8IS0tIGZyZWNjaWEgTiAtLT4KICA8bGluZSB4MT0iMjU2IiB5MT0iMzAiIHgyPSIyNTYiIHkyPSI3NSIgc3Ryb2tlPSIjOGIxYTFhIiBzdHJva2Utd2lkdGg9IjgiLz4KICA8cG9seWdvbiBwb2ludHM9IjI1Niw4MCAyMzYsNTIgMjc2LDUyIiBmaWxsPSIjOGIxYTFhIi8+CiAgPCEtLSB0ZXN0byAtLT4KICA8dGV4dCB4PSIyNTYiIHk9IjM0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZjVmMGU4Ij5SLkQuIDIyMjk8L3RleHQ+CiAgPHRleHQgeD0iMjU2IiB5PSIzOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjMwIiBmaWxsPSIjYzhiODlhIj4xOTM5PC90ZXh0PgogIDx0ZXh0IHg9IjI1NiIgeT0iNDUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iJ0NvdXJpZXIgTmV3Jyxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjYwNTAiIGxldHRlci1zcGFjaW5nPSI2Ij5QSUxBU1RSTyBDLkEuPC90ZXh0Pgo8L3N2Zz4=">
+<title>Verifica Pilastro C.A. — R.D. 2229/1939</title>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#f5f0e8;--paper:#ede8dc;--ink:#1a1610;--ink2:#3d3628;--ink3:#6b6050;
+  --red:#8b1a1a;--blue:#1a3a6b;--green:#1a5c2a;--amber:#b8860b;
+  --border:#c8b89a;--border2:#a09070;
+  --mono:'Courier Prime','Courier New',monospace;
+  --serif:'Libre Baskerville',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#d4c9b0;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(0,0,0,.04) 27px,rgba(0,0,0,.04) 28px);font-family:var(--serif);min-height:100vh;color:var(--ink);padding:30px 20px 60px;}
+.doc-header{max-width:980px;margin:0 auto 28px;background:var(--cream);border:2px solid var(--ink);padding:28px 36px 24px;position:relative;box-shadow:4px 4px 0 var(--ink);}
+.doc-header::before{content:'';position:absolute;top:5px;left:5px;right:-5px;bottom:-5px;border:1px solid var(--border2);z-index:-1;}
+.ministry-line{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink3);text-align:center;margin-bottom:10px;}
+.doc-title{text-align:center;font-size:20px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:6px;}
+.doc-subtitle{text-align:center;font-size:12px;font-style:italic;color:var(--ink3);margin-bottom:16px;}
+.doc-decree{text-align:center;font-family:var(--mono);font-size:11px;color:var(--blue);font-weight:700;letter-spacing:.08em;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:8px 0;}
+.main{max-width:980px;margin:0 auto;display:grid;grid-template-columns:430px 1fr;gap:24px;align-items:start;}
+.panel{background:var(--cream);border:1.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);}
+.panel-head{background:var(--ink);color:var(--cream);font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:9px 18px;display:flex;align-items:center;gap:8px;}
+.panel-head::before{content:'§';font-size:13px;opacity:.6;}
+.panel-body{padding:22px 22px 18px;}
+.sect-title{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:14px;margin-top:4px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.field{margin-bottom:12px;}
+label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--ink2);margin-bottom:4px;}
+label .unit{color:var(--ink3);font-style:italic;}
+input[type=number],select{width:100%;background:var(--paper);border:1px solid var(--border2);border-bottom:2px solid var(--ink);color:var(--ink);font-family:var(--mono);font-size:13px;padding:7px 10px;outline:none;transition:border-color .15s,background .15s;-webkit-appearance:none;}
+input:focus,select:focus{border-color:var(--blue);background:#fff;}
+select option{background:var(--cream);}
+.divider{height:1px;background:var(--border);margin:18px 0;}
+.btn-calc{width:100%;background:var(--ink);color:var(--cream);border:none;padding:13px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background .15s;display:flex;align-items:center;justify-content:center;gap:10px;}
+.btn-calc:hover{background:var(--blue);}
+.btn-calc::before{content:'▶';font-size:9px;}
+.right-col{display:flex;flex-direction:column;gap:20px;}
+.schema-body{padding:18px;display:flex;justify-content:center;}
+.result-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--border);font-size:13px;}
+.result-row:last-child{border-bottom:none;}
+.rl{font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.05em;}
+.rv{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--ink);}
+.rv.blue{color:var(--blue);}.rv.red{color:var(--red);}.rv.green{color:var(--green);}.rv.amber{color:var(--amber);}
+.bar-wrap{margin-top:6px;}
+.bar-labels{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:4px;}
+.bar-track{height:12px;background:var(--paper);border:1px solid var(--border2);position:relative;}
+.bar-fill{height:100%;background:var(--green);transition:width .7s cubic-bezier(.4,0,.2,1),background .4s;}
+.bar-limit{position:absolute;top:-3px;right:0;width:2px;height:18px;background:var(--red);}
+.esito-box{border:2px solid var(--border2);padding:16px 20px;display:flex;align-items:flex-start;gap:14px;position:relative;overflow:hidden;background:var(--paper);}
+.esito-box.ok{border-color:var(--green);background:rgba(26,92,42,.06);}
+.esito-box.no{border-color:var(--red);background:rgba(139,26,26,.06);}
+.esito-box.warn{border-color:var(--amber);background:rgba(184,134,11,.06);}
+.esito-stamp{font-family:var(--mono);font-size:20px;font-weight:700;writing-mode:vertical-lr;transform:rotate(180deg);letter-spacing:.1em;opacity:.15;position:absolute;right:10px;top:8px;}
+.esito-box.ok .esito-stamp{color:var(--green);}
+.esito-box.no .esito-stamp{color:var(--red);}
+.esito-box.warn .esito-stamp{color:var(--amber);}
+.esito-icon{font-size:28px;line-height:1;flex-shrink:0;}
+.esito-title{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.esito-box.ok .esito-title{color:var(--green);}
+.esito-box.no .esito-title{color:var(--red);}
+.esito-box.warn .esito-title{color:var(--amber);}
+.esito-detail{font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.6;}
+.norm-box{background:var(--paper);border-left:3px solid var(--blue);padding:12px 15px;font-family:var(--mono);font-size:10px;color:var(--ink3);line-height:1.7;margin-top:16px;}
+.norm-box strong{color:var(--blue);}
+.calc-toggle{background:none;border:1px solid var(--border2);color:var(--ink3);font-family:var(--mono);font-size:10px;padding:6px 14px;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;transition:border-color .15s,color .15s;margin-top:14px;}
+.calc-toggle:hover{border-color:var(--blue);color:var(--blue);}
+.calc-steps{display:none;margin-top:12px;}
+.calc-steps.show{display:block;}
+.step{font-family:var(--mono);font-size:10.5px;color:var(--ink2);padding:6px 0;border-bottom:1px dotted var(--border);display:flex;justify-content:space-between;gap:10px;}
+.step:last-child{border:none;}
+.step em{color:var(--ink);font-style:normal;font-weight:700;}
+@media(max-width:820px){.main{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div class="ministry-line">Regno d'Italia — Ministero dei Lavori Pubblici</div>
+  <div class="doc-title">Verifica di Pilastro in Cemento Armato</div>
+  <div class="doc-subtitle">Sforzo Normale Centrato — Metodo delle Tensioni Ammissibili</div>
+  <div class="doc-decree">Regio Decreto 16 Novembre 1939, n. 2229 — Norme per la Esecuzione delle Opere in Conglomerato Cementizio</div>
+</div>
+
+<div class="main">
+  <div>
+    <div class="panel">
+      <div class="panel-head">Dati di Progetto</div>
+      <div class="panel-body">
+
+        <div class="sect-title">Geometria della Sezione</div>
+        <div class="field-row">
+          <div>
+            <label>Larghezza b <span class="unit">[cm]</span></label>
+            <input type="number" id="b" value="30" min="10" max="500" step="1">
+          </div>
+          <div>
+            <label>Altezza h <span class="unit">[cm]</span></label>
+            <input type="number" id="h" value="30" min="10" max="500" step="1">
+          </div>
+        </div>
+        <div class="field-row">
+          <div>
+            <label>Copriferro c <span class="unit">[cm]</span></label>
+            <input type="number" id="cover" value="2.5" min="1" max="8" step="0.5">
+          </div>
+          <div>
+            <label>Altezza libera H <span class="unit">[cm]</span></label>
+            <input type="number" id="H" value="300" min="50" max="3000" step="10">
+          </div>
+        </div>
+        <div class="field">
+          <label>Condizioni di vincolo</label>
+          <select id="omega_type" onchange="toggleOmega()">
+            <option value="1.0" selected>Libero–Libero (cerniere) &rarr; &omega; = 1,0</option>
+            <option value="0.5">Incastro–Incastro &rarr; &omega; = 0,5</option>
+            <option value="0.7">Incastro–Cerniera &rarr; &omega; = 0,7</option>
+            <option value="2.0">Incastro–Libero (mensola) &rarr; &omega; = 2,0</option>
+            <option value="custom">Personalizzato</option>
+          </select>
+        </div>
+        <div class="field" id="omega_custom_wrap" style="display:none">
+          <label>Coefficiente &omega; personalizzato</label>
+          <input type="number" id="omega_custom" value="1.0" min="0.5" max="2.5" step="0.05">
+        </div>
+
+        <div class="divider"></div>
+        <div class="sect-title">Art. 18 — Tensioni Ammissibili Conglomerato</div>
+        <div class="field">
+          <label>Classe conglomerato</label>
+          <select id="cls_class" onchange="toggleR28()">
+            <option value="35|N">Portland normale — &sigma;_c,amm = 35 kg/cm&sup2; (R&#8322;&#8328; min 120)</option>
+            <option value="45|N">Alta resistenza / alluminoso — &sigma;_c,amm = 45 kg/cm&sup2; (R&#8322;&#8328; min 160)</option>
+            <option value="0|C" selected>R&#8322;&#8328; determinata e controllata — &sigma;_c,amm = R&#8322;&#8328;/3 (max 60)</option>
+          </select>
+        </div>
+        <div class="field" id="r28_wrap">
+          <label>Resistenza cubica R&#8322;&#8328; <span class="unit">[kg/cm&sup2;]</span></label>
+          <input type="number" id="R28" value="250" min="180" max="600" step="10">
+        </div>
+
+        <div class="divider"></div>
+        <div class="sect-title">Art. 19 — Tensioni Ammissibili Acciaio</div>
+        <div class="field">
+          <label>Tipo di acciaio</label>
+          <select id="steel">
+            <option value="1400">Acciaio dolce (ferro omogeneo) — &sigma;_s,amm = 1400 kg/cm&sup2;</option>
+            <option value="2000" selected>Acciaio semiduro / duro — &sigma;_s,amm = 2000 kg/cm&sup2;</option>
+          </select>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sect-title">Art. 30 — Armatura Longitudinale</div>
+        <div class="field-row">
+          <div>
+            <label>N&deg; barre totali</label>
+            <input type="number" id="nbarre" value="4" min="4" max="40" step="1">
+          </div>
+          <div>
+            <label>Diametro &Oslash; <span class="unit">[mm]</span></label>
+            <select id="diam">
+              <option value="8">&Oslash; 8</option>
+              <option value="10">&Oslash; 10</option>
+              <option value="12">&Oslash; 12</option>
+              <option value="14" selected>&Oslash; 14</option>
+              <option value="16">&Oslash; 16</option>
+              <option value="18">&Oslash; 18</option>
+              <option value="20">&Oslash; 20</option>
+              <option value="22">&Oslash; 22</option>
+              <option value="24">&Oslash; 24</option>
+              <option value="26">&Oslash; 26</option>
+              <option value="28">&Oslash; 28</option>
+              <option value="30">&Oslash; 30</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="sect-title">Carico Applicato</div>
+        <div class="field">
+          <label>Sforzo normale N <span class="unit">[kg]</span></label>
+          <input type="number" id="N" value="80000" min="100" step="500">
+        </div>
+
+        <button class="btn-calc" onclick="calcola()">Esegui Verifica</button>
+      </div>
+    </div>
+
+    <div class="norm-box">
+      <strong>Art. 18:</strong> &sigma;_c,amm = 35 kg/cm&sup2; (Portland), 45 (alta resist.), R&#8322;&#8328;/3 max 60 (con controllo).<br>
+      <strong>Art. 19:</strong> &sigma;_s,amm = 1400 kg/cm&sup2; (acc. dolce), 2000 kg/cm&sup2; (semiduro/duro).<br>
+      <strong>Art. 30:</strong> &rho;_min = 0,8% per Ac &le; 2000 cm&sup2;; 0,5% per Ac &ge; 8000 cm&sup2;; interpolaz. lineare negli intermedi.<br>
+      Se lunghezza libera &gt; 15 &times; dim.min &rarr; verificare stabilit&agrave; al carico di punta.<br>
+      <strong>n = 15</strong> (coefficiente di omogeneizzazione).
+    </div>
+  </div>
+
+  <!-- COLONNA DESTRA -->
+  <div class="right-col">
+
+    <div class="panel">
+      <div class="panel-head">Schema — Sezione e Pilastro</div>
+      <div class="schema-body">
+        <svg width="340" height="240" viewBox="0 0 340 240" font-family="'Courier Prime',monospace">
+          <rect width="340" height="240" fill="#f5f0e8"/>
+          <rect x="30" y="30" width="60" height="180" fill="#ddd8c8" stroke="#1a1610" stroke-width="1.5"/>
+          <line x1="30" y1="55"  x2="90" y2="55"  stroke="#c8b89a" stroke-width=".6" stroke-dasharray="4,3"/>
+          <line x1="30" y1="85"  x2="90" y2="85"  stroke="#c8b89a" stroke-width=".6" stroke-dasharray="4,3"/>
+          <line x1="30" y1="115" x2="90" y2="115" stroke="#c8b89a" stroke-width=".6" stroke-dasharray="4,3"/>
+          <line x1="30" y1="145" x2="90" y2="145" stroke="#c8b89a" stroke-width=".6" stroke-dasharray="4,3"/>
+          <line x1="30" y1="175" x2="90" y2="175" stroke="#c8b89a" stroke-width=".6" stroke-dasharray="4,3"/>
+          <line x1="60" y1="5" x2="60" y2="28" stroke="#8b1a1a" stroke-width="2"/>
+          <polygon points="60,30 55,18 65,18" fill="#8b1a1a"/>
+          <text x="68" y="20" font-size="9" fill="#8b1a1a" font-weight="bold">N</text>
+          <line x1="96" y1="30" x2="96" y2="210" stroke="#1a1610" stroke-width=".8"/>
+          <line x1="93" y1="30"  x2="99" y2="30"  stroke="#1a1610" stroke-width=".8"/>
+          <line x1="93" y1="210" x2="99" y2="210" stroke="#1a1610" stroke-width=".8"/>
+          <text x="100" y="124" font-size="9" fill="#3d3628">H</text>
+          <rect x="20" y="208" width="80" height="8" fill="#1a1610"/>
+          <g transform="translate(148,38)">
+            <text x="77" y="-16" text-anchor="middle" font-size="9" fill="#6b6050" letter-spacing="2">SEZ. A-A</text>
+            <rect x="27" y="0" width="100" height="100" fill="#ddd8c8" stroke="#1a1610" stroke-width="1.5"/>
+            <rect x="35" y="8" width="84" height="84" fill="none" stroke="#c8b89a" stroke-width=".7" stroke-dasharray="3,2"/>
+            <rect x="32" y="5" width="90" height="90" fill="none" stroke="#1a3a6b" stroke-width="1.2"/>
+            <circle cx="38"  cy="12" r="5" fill="#1a3a6b" stroke="#1a1610" stroke-width="1"/>
+            <circle cx="116" cy="12" r="5" fill="#1a3a6b" stroke="#1a1610" stroke-width="1"/>
+            <circle cx="38"  cy="90" r="5" fill="#1a3a6b" stroke="#1a1610" stroke-width="1"/>
+            <circle cx="116" cy="90" r="5" fill="#1a3a6b" stroke="#1a1610" stroke-width="1"/>
+            <g id="extra-bars"></g>
+            <line x1="27" y1="108" x2="127" y2="108" stroke="#1a1610" stroke-width=".8"/>
+            <line x1="27" y1="105" x2="27"  y2="111" stroke="#1a1610" stroke-width=".8"/>
+            <line x1="127" y1="105" x2="127" y2="111" stroke="#1a1610" stroke-width=".8"/>
+            <text id="label-b" x="77" y="118" text-anchor="middle" font-size="9" fill="#3d3628">b</text>
+            <line x1="137" y1="0"   x2="137" y2="100" stroke="#1a1610" stroke-width=".8"/>
+            <line x1="134" y1="0"   x2="140" y2="0"   stroke="#1a1610" stroke-width=".8"/>
+            <line x1="134" y1="100" x2="140" y2="100" stroke="#1a1610" stroke-width=".8"/>
+            <text id="label-h" x="147" y="54" font-size="9" fill="#3d3628">h</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">Risultati della Verifica</div>
+      <div class="panel-body">
+        <div class="esito-box" id="esito-box">
+          <div class="esito-icon" id="esito-icon">&#128208;</div>
+          <div>
+            <div class="esito-title" id="esito-title">In attesa di calcolo</div>
+            <div class="esito-detail" id="esito-detail">Inserire i dati e premere "Esegui Verifica"</div>
+          </div>
+          <div class="esito-stamp" id="esito-stamp"></div>
+        </div>
+
+        <div style="margin-top:16px">
+          <div class="result-row">
+            <span class="rl">Sezione lorda A<sub>c</sub> = b &times; h</span>
+            <span class="rv blue" id="r-Ac">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">Area acciaio A<sub>s</sub></span>
+            <span class="rv blue" id="r-As">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">Rapporto geometrico &rho;</span>
+            <span class="rv" id="r-rho">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">&rho;<sub>min</sub> Art. 30 (funzione di A<sub>c</sub>)</span>
+            <span class="rv" id="r-rhomin">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">Sezione omogeneizzata A<sub>om</sub> (n = 15)</span>
+            <span class="rv blue" id="r-Aom">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">&sigma;<sub>c,amm</sub> — tabella Art. 18</span>
+            <span class="rv" id="r-sc-amm">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">&sigma;<sub>c,eff</sub> = N / A<sub>om</sub></span>
+            <span class="rv" id="r-sc-eff">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">&sigma;<sub>s,eff</sub> = n &middot; &sigma;<sub>c,eff</sub></span>
+            <span class="rv" id="r-ss-eff">—</span>
+          </div>
+          <div class="result-row">
+            <span class="rl">Snellezza &lambda; = &omega;&middot;H / i<sub>min</sub> (informativa)</span>
+            <span class="rv" id="r-lambda">—</span>
+          </div>
+          <div class="result-row" style="border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:6px">
+            <span class="rl" style="font-weight:700;color:var(--ink2)">Coefficiente di utilizzo &eta;</span>
+            <span class="rv" id="r-eta" style="font-size:16px">—</span>
+          </div>
+        </div>
+
+        <div class="bar-wrap">
+          <div class="bar-labels"><span>0%</span><span>50%</span><span>100% (limite)</span></div>
+          <div class="bar-track">
+            <div class="bar-fill" id="bar-fill" style="width:0%"></div>
+            <div class="bar-limit"></div>
+          </div>
+        </div>
+        <button class="calc-toggle" onclick="toggleSteps()">&#9660; Dettaglio calcoli</button>
+        <div class="calc-steps" id="calc-steps"></div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-arm" style="display:none">
+      <div class="panel-head">Verifica Armatura — Art. 30</div>
+      <div class="panel-body">
+        <div class="result-row">
+          <span class="rl">&rho;<sub>min</sub> richiesta</span>
+          <span class="rv" id="r-arm-min">—</span>
+        </div>
+        <div class="result-row">
+          <span class="rl">A<sub>s,min</sub> corrispondente</span>
+          <span class="rv" id="r-arm-asmin">—</span>
+        </div>
+        <div class="result-row">
+          <span class="rl">&rho;<sub>max</sub> ammesso (4,0%)</span>
+          <span class="rv" id="r-arm-max">—</span>
+        </div>
+        <div class="result-row">
+          <span class="rl">&rho;<sub>eff</sub> calcolata</span>
+          <span class="rv" id="r-arm-eff">—</span>
+        </div>
+        <div class="result-row" style="border:none">
+          <span class="rl">Esito armatura</span>
+          <span class="rv" id="r-arm-esito">—</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function fmt(v,dec){dec=(dec===undefined)?2:dec;if(v===null||v===undefined||isNaN(v))return'—';return v.toFixed(dec).replace('.',',');}
+
+function toggleOmega(){
+  document.getElementById('omega_custom_wrap').style.display=
+    document.getElementById('omega_type').value==='custom'?'block':'none';
+}
+function toggleR28(){
+  document.getElementById('r28_wrap').style.display=
+    document.getElementById('cls_class').value.endsWith('|C')?'block':'none';
+}
+function toggleSteps(){document.getElementById('calc-steps').classList.toggle('show');}
+
+function calcola(){
+  var b   = parseFloat(document.getElementById('b').value);
+  var h   = parseFloat(document.getElementById('h').value);
+  var H   = parseFloat(document.getElementById('H').value);
+  var sa  = parseFloat(document.getElementById('steel').value);
+  var nb  = parseInt(document.getElementById('nbarre').value);
+  var d   = parseFloat(document.getElementById('diam').value);
+  var N   = parseFloat(document.getElementById('N').value);
+
+  var oSel  = document.getElementById('omega_type').value;
+  var omega = oSel==='custom' ? parseFloat(document.getElementById('omega_custom').value) : parseFloat(oSel);
+
+  var clsSel   = document.getElementById('cls_class');
+  var clsVal   = clsSel.value;
+  var clsLabel = clsSel.options[clsSel.selectedIndex].text.split('—')[0].trim();
+  var sc_amm;
+  if(clsVal.endsWith('|C')){
+    var R28 = parseFloat(document.getElementById('R28').value);
+    sc_amm = Math.min(R28/3.0, 60.0);
+  } else {
+    sc_amm = parseFloat(clsVal.split('|')[0]);
+  }
+
+  var Ac       = b*h;
+  var r_cm     = (d/10)/2;
+  var As       = nb*Math.PI*r_cm*r_cm;
+  var rho      = (As/Ac)*100;
+  var n        = 15;
+  var Ac_netta = Ac-As;
+  var Aom      = Ac_netta + n*As;
+  var sc_eff   = N/Aom;
+  var ss_eff   = n*sc_eff;
+  var eta_c    = sc_eff/sc_amm;
+  var eta_s    = ss_eff/sa;
+  var eta      = Math.max(eta_c, eta_s);
+  var imin     = Math.min(b,h)/Math.sqrt(12);
+  var l0       = omega*H;
+  var lambda   = l0/imin;
+  var dim_min  = Math.min(b,h);
+  var cpWarn   = l0 > 15*dim_min;
+
+  var rho_min;
+  if(Ac<=2000)      rho_min=0.8;
+  else if(Ac>=8000) rho_min=0.5;
+  else              rho_min=0.8-(0.8-0.5)*(Ac-2000)/(8000-2000);
+  var rho_max = 4.0;
+  var arm_ok  = rho>=rho_min && rho<=rho_max;
+
+  var stress_ok = eta<=1.0;
+  var all_ok    = stress_ok && arm_ok;
+
+  var eBox   = document.getElementById('esito-box');
+  var eIcon  = document.getElementById('esito-icon');
+  var eTitle = document.getElementById('esito-title');
+  var eDet   = document.getElementById('esito-detail');
+  var eStamp = document.getElementById('esito-stamp');
+
+  if(all_ok && !cpWarn){
+    eBox.className='esito-box ok';
+    eIcon.textContent='✔';
+    eTitle.textContent='VERIFICA SODDISFATTA';
+    eDet.innerHTML='&eta; = '+fmt(eta*100,1)+'% &le; 100% &mdash; Tensioni nei limiti del R.D. 2229/1939';
+    eStamp.textContent='VERIFICATO';
+  } else if(all_ok && cpWarn){
+    eBox.className='esito-box warn';
+    eIcon.textContent='⚠';
+    eTitle.textContent='VERIFICATO — CON AVVISO';
+    eDet.innerHTML='&eta; = '+fmt(eta*100,1)+'% &le; 100% &mdash; tensioni OK.<br>'
+      +'&#9888; Art. 30: l&#8320; = '+fmt(l0,1)+' cm &gt; 15&times;'+dim_min+' = '+(15*dim_min)+' cm.<br>'
+      +'Verificare la stabilit&agrave; al carico di punta (Eulero).';
+    eStamp.textContent='AVVISO';
+  } else {
+    eBox.className='esito-box no';
+    eIcon.textContent='✖';
+    eTitle.textContent='VERIFICA NON SODDISFATTA';
+    var m='';
+    if(!stress_ok) m+='&eta; = '+fmt(eta*100,1)+'% &gt; 100% &mdash; tensioni superate. ';
+    if(!arm_ok){
+      if(rho<rho_min) m+='Armatura insuff.: &rho; = '+fmt(rho,3)+'% &lt; &rho;_min = '+fmt(rho_min,3)+'% (Art.30). ';
+      else            m+='Armatura eccessiva: &rho; = '+fmt(rho,3)+'% &gt; 4,0%. ';
+    }
+    if(cpWarn) m+='&#9888; l&#8320; &gt; 15&times;dim.min: verificare carico di punta. ';
+    eDet.innerHTML=m;
+    eStamp.textContent='NON VERIF.';
+  }
+
+  document.getElementById('r-Ac').textContent  = fmt(Ac,2)+' cm²';
+  document.getElementById('r-As').textContent  = fmt(As,3)+' cm²';
+
+  var rhoEl=document.getElementById('r-rho');
+  rhoEl.textContent=fmt(rho,3)+' %';
+  rhoEl.className='rv '+(arm_ok?'':'red');
+
+  var note=Ac<=2000?'(Ac ≤ 2000 cm²)':Ac>=8000?'(Ac ≥ 8000 cm²)':'(interpolaz.)';
+  var rmEl=document.getElementById('r-rhomin');
+  rmEl.textContent=fmt(rho_min,3)+' % '+note;
+  rmEl.className='rv '+(rho>=rho_min?'green':'red');
+
+  document.getElementById('r-Aom').textContent   =fmt(Aom,2)+' cm²';
+  document.getElementById('r-sc-amm').textContent=fmt(sc_amm,2)+' kg/cm²';
+
+  var scEl=document.getElementById('r-sc-eff');
+  scEl.textContent=fmt(sc_eff,2)+' kg/cm²';
+  scEl.className='rv '+(sc_eff>sc_amm?'red':'green');
+
+  var ssEl=document.getElementById('r-ss-eff');
+  ssEl.textContent=fmt(ss_eff,2)+' kg/cm²';
+  ssEl.className='rv '+(ss_eff>sa?'red':'green');
+
+  var lamEl=document.getElementById('r-lambda');
+  lamEl.textContent=fmt(lambda,1)+(cpWarn?' ⚠':'');
+  lamEl.className='rv '+(cpWarn?'amber':'');
+
+  var etaEl=document.getElementById('r-eta');
+  etaEl.textContent=fmt(eta*100,1)+' %';
+  etaEl.className='rv '+(eta>1?'red':eta>0.85?'amber':'green');
+
+  var pct=Math.min(eta*100,120);
+  var bf=document.getElementById('bar-fill');
+  bf.style.width=pct+'%';
+  bf.style.background=eta>1?'#8b1a1a':eta>0.85?'#b8860b':'#1a5c2a';
+
+  document.getElementById('panel-arm').style.display='block';
+  document.getElementById('r-arm-min').textContent   =fmt(rho_min,3)+' % '+note;
+  document.getElementById('r-arm-asmin').textContent =fmt(Ac*rho_min/100,2)+' cm²';
+  document.getElementById('r-arm-max').textContent   =rho_max+' %  → As,max = '+fmt(Ac*rho_max/100,2)+' cm²';
+  var aeEl=document.getElementById('r-arm-eff');
+  aeEl.textContent=fmt(rho,3)+' %';
+  aeEl.className='rv '+(arm_ok?'green':'red');
+  var aoEl=document.getElementById('r-arm-esito');
+  aoEl.textContent=arm_ok?'VERIFICATA ✓':(rho<rho_min?'INSUFFICIENTE ✖':'ECCESSIVA ✖');
+  aoEl.className='rv '+(arm_ok?'green':'red');
+
+  aggiornaSchema(b,h,nb);
+  document.getElementById('label-b').textContent='b = '+b+' cm';
+  document.getElementById('label-h').textContent='h = '+h+' cm';
+
+  var clsNote=clsVal.endsWith('|C')
+    ? ' (R28/3 = '+fmt(parseFloat(document.getElementById('R28').value)/3,2)+', max 60)'
+    : '';
+  var steps=[
+    ['b × h',''+b+' × '+h+' cm'],
+    ['Area lorda Ac',fmt(Ac,2)+' cm²'],
+    ['Ø / n° barre',''+d+' mm / '+nb],
+    ['Area singola barra = π·(Ø/2)²',fmt(Math.PI*r_cm*r_cm,4)+' cm²'],
+    ['Area totale acciaio As',fmt(As,4)+' cm²'],
+    ['ρ = As/Ac × 100',fmt(rho,4)+' %'],
+    ['ρ_min Art. 30',fmt(rho_min,4)+' %'],
+    ['Verifica ρ ≥ ρ_min',rho>=rho_min?'OK ✓':'NON VERIF. ✖'],
+    ['n (coeff. omogeneizzazione)','15'],
+    ['Ac,netta = Ac − As',fmt(Ac_netta,4)+' cm²'],
+    ['Aom = Ac,netta + n·As',fmt(Aom,4)+' cm²'],
+    ['σ_c,amm Art. 18 ('+clsLabel+')'+clsNote,fmt(sc_amm,2)+' kg/cm²'],
+    ['σ_s,amm Art. 19',fmt(sa,0)+' kg/cm²'],
+    ['σ_c,eff = N / Aom',fmt(sc_eff,4)+' kg/cm²'],
+    ['σ_s,eff = n · σ_c,eff',fmt(ss_eff,4)+' kg/cm²'],
+    ['Verifica cls σ_c,eff ≤ σ_c,amm',sc_eff<=sc_amm?'OK ✓':'NON VERIF. ✖'],
+    ['Verifica acc. σ_s,eff ≤ σ_s,amm',ss_eff<=sa?'OK ✓':'NON VERIF. ✖'],
+    ['η_c = σ_c,eff / σ_c,amm',fmt(eta_c*100,2)+' %'],
+    ['η_s = σ_s,eff / σ_s,amm',fmt(eta_s*100,2)+' %'],
+    ['η = max(η_c, η_s)',fmt(eta*100,2)+' %'],
+    ['i_min = min(b,h)/√12',fmt(imin,4)+' cm'],
+    ['l₀ = ω × H',fmt(l0,2)+' cm'],
+    ['λ = l₀/i_min (informativa)',fmt(lambda,2)],
+    ['15 × dim.min (soglia Art. 30)',''+(15*dim_min)+' cm'],
+    ['Verifica carico di punta',cpWarn?'⚠ RICHIESTA VERIFICA EULERO':'OK — non necessaria'],
+  ];
+  document.getElementById('calc-steps').innerHTML=steps
+    .map(function(s){return'<div class="step"><span>'+s[0]+'</span><span><em>'+s[1]+'</em></span></div>';})
+    .join('');
+}
+
+function aggiornaSchema(b,h,nb){
+  var extra=document.getElementById('extra-bars');
+  extra.innerHTML='';
+  var bpl=Math.max(0,Math.floor((nb-4)/4));
+  if(bpl>0){
+    for(var i=1;i<=bpl;i++){
+      var x=38+i*(78/(bpl+1));
+      extra.innerHTML+='<circle cx="'+x+'" cy="12" r="4" fill="#1a3a6b" stroke="#1a1610" stroke-width=".8"/>';
+      extra.innerHTML+='<circle cx="'+x+'" cy="90" r="4" fill="#1a3a6b" stroke="#1a1610" stroke-width=".8"/>';
+    }
+    for(var j=1;j<=bpl;j++){
+      var y=12+j*(78/(bpl+1));
+      extra.innerHTML+='<circle cx="38" cy="'+y+'" r="4" fill="#1a3a6b" stroke="#1a1610" stroke-width=".8"/>';
+      extra.innerHTML+='<circle cx="116" cy="'+y+'" r="4" fill="#1a3a6b" stroke="#1a1610" stroke-width=".8"/>';
+    }
+  }
+}
+
+window.onload=function(){toggleR28();calcola();};
+</script>
+
+<!-- BANNER INSTALLAZIONE PWA -->
+<div id="pwa-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1610;border-top:2px solid #c8b89a;padding:14px 20px;z-index:9999;font-family:'Courier Prime','Courier New',monospace;display:flex;align-items:center;gap:14px;box-shadow:0 -4px 20px rgba(0,0,0,.4);">
+  <div style="font-size:28px;flex-shrink:0;">📐</div>
+  <div style="flex:1">
+    <div style="font-size:12px;font-weight:700;color:#f5f0e8;letter-spacing:.1em;text-transform:uppercase;">Installa App</div>
+    <div style="font-size:10px;color:#c8b89a;margin-top:2px;">Aggiungi alla schermata home per usarla offline</div>
+  </div>
+  <button onclick="installApp()" style="background:#c8b89a;color:#1a1610;border:none;padding:10px 18px;font-family:'Courier Prime',monospace;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;">INSTALLA</button>
+  <button onclick="document.getElementById('pwa-banner').style.display='none'" style="background:none;border:1px solid #6b6050;color:#6b6050;padding:10px 12px;font-family:monospace;font-size:14px;cursor:pointer;">✕</button>
+</div>
+
+<script>
+// Service Worker inline (cache offline)
+if('serviceWorker' in navigator){
+  var swCode = `
+    self.addEventListener('install', function(e){
+      e.waitUntil(
+        caches.open('pilastro-ca-v1').then(function(cache){
+          return cache.addAll(['/']);
+        }).catch(function(){})
+      );
+    });
+    self.addEventListener('fetch', function(e){
+      e.respondWith(
+        caches.match(e.request).then(function(r){
+          return r || fetch(e.request).catch(function(){return new Response('Offline');});
+        })
+      );
+    });
+  `;
+  var blob = new Blob([swCode], {type:'application/javascript'});
+  var swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl).catch(function(){});
+}
+
+// Intercetta evento installazione PWA
+var deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', function(e){
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('pwa-banner').style.display = 'flex';
+});
+
+function installApp(){
+  var banner = document.getElementById('pwa-banner');
+  banner.style.display = 'none';
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function(result){
+      if(result.outcome === 'accepted'){
+        console.log('App installata');
+      }
+      deferredPrompt = null;
+    });
+  }
+}
+
+window.addEventListener('appinstalled', function(){
+  document.getElementById('pwa-banner').style.display = 'none';
+  deferredPrompt = null;
+});
+</script>
+
+</body>
+</html>
